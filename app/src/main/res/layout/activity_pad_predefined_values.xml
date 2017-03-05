@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_background"
+    android:weightSum="1"
+    android:id="@+id/Main_Layout"
+    app:layout_collapseParallaxMultiplier="1.0">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="387dp"
+        android:layout_height="99dp"
+        android:id="@+id/Speed_Layout"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="120dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/default_background"
+                app:srcCompat="@drawable/pad_button_plus"
+                android:id="@+id/plusImageButton"
+                android:tag="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="120dp"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="120dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="120dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/pad_button_minus"
+                android:background="@drawable/default_background"
+                android:id="@+id/minusImageButton"
+                android:layout_width="match_parent"
+                android:tag="2" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="329dp"
+        android:id="@+id/Control_Layout"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_weight="0.00"
+            android:layout_width="120dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="116dp" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_arrow_button_left"
+                android:background="@drawable/default_background"
+                android:id="@+id/leftImageButton"
+                android:tag="7" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_width="120dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pad_arrow_button_up"
+                android:background="@drawable/default_background"
+                android:id="@+id/upImageButton"
+                android:layout_weight="0.34"
+                android:tag="5" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pad_stop_button"
+                android:background="@drawable/default_background"
+                android:id="@+id/stopImageButton"
+                android:onClick="onClickExit"
+                android:layout_weight="0.50" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pad_arrow_button_down"
+                android:background="@drawable/default_background"
+                android:id="@+id/bottomImageButton"
+                android:tag="6" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_width="120dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="116dp" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="113dp"
+                app:srcCompat="@drawable/pad_arrow_button_right"
+                android:background="@drawable/default_background"
+                android:tag="8"
+                android:id="@+id/rightImageButton" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/Mode_Layout">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="120dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_autonomous_button"
+                android:background="@drawable/default_background"
+                android:id="@+id/autonomousImageButton"
+                android:tag="4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="120dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="120dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_remote_button"
+                android:background="@drawable/default_background"
+                android:id="@+id/remoteImageButton"
+                android:tag="3" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

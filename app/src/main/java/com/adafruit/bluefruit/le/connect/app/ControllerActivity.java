@@ -25,6 +25,7 @@ public class ControllerActivity extends UartInterfaceActivity {
     // Activity request codes (used for onActivityResult)
     private static final int kActivityRequestCode_ConnectedSettingsActivity = 0;
     private static final int kActivityRequestCode_PadActivity = 1;
+    private static final int kActivityRequestCode_PadActivityPredefinedValues = 2;
 
     // Constants
     private final static String kPreferences = "ControllerActivity_prefs";
@@ -49,8 +50,13 @@ public class ControllerActivity extends UartInterfaceActivity {
         interfaceListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (position == 0) {
             Intent intent = new Intent(ControllerActivity.this, PadActivity.class);
             startActivityForResult(intent, kActivityRequestCode_PadActivity);
+        } else {
+            Intent intent = new Intent(ControllerActivity.this, PadActivityPredefinedValues.class);
+            startActivityForResult(intent, kActivityRequestCode_PadActivityPredefinedValues);
+        }
             }
         });
 

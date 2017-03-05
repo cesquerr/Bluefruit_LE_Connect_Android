@@ -122,6 +122,7 @@
 
     <!-- Pad Activity -->
     <string name="title_activity_pad">Control Pad</string>
+    <string name="title_activity_pad_predefined_values">Control Pad Predefined Values</string>
 
     <!-- Connected Settings -->
     <string name="title_activity_connected_settings">Firmware Updates</string>
