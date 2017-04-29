@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.adafruit.bluefruit.le.connect">
+    package="com.cesquerr.becky">
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -20,7 +20,7 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/becky_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
@@ -41,7 +41,7 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.MainActivity" />
+                android:value="com.cesquerr.becky.app.MainActivity" />
         </activity>
         <activity
             android:name=".app.InfoActivity"
@@ -50,7 +50,7 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.MainActivity" />
+                android:value="com.cesquerr.becky.app.MainActivity" />
         </activity>
         <activity
             android:name=".app.CommonHelpActivity"
@@ -58,7 +58,7 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.InfoActivity" />
+                android:value="com.cesquerr.becky.app.InfoActivity" />
         </activity>
         <activity
             android:name=".app.ControllerActivity"
@@ -67,23 +67,25 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.MainActivity" />
+                android:value="com.cesquerr.becky.app.MainActivity" />
         </activity>
         <activity
             android:name=".app.PadActivity"
             android:label="@string/title_activity_pad"
+            android:parentActivityName=".app.ControllerActivity"
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.MainActivity" />
+                android:value="com.cesquerr.becky.app.ControllerActivity" />
         </activity>
         <activity
             android:name=".app.PadActivityPredefinedValues"
             android:label="@string/title_activity_pad_predefined_values"
+            android:parentActivityName=".app.ControllerActivity"
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.MainActivity" />
+                android:value="com.cesquerr.becky.app.ControllerActivity" />
         </activity>
         <activity
             android:name=".app.settings.SettingsActivity"
