@@ -1,227 +1,191 @@
-<LinearLayout android:id="@+id/rootLayout"
-              xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@drawable/default_background"
-              android:orientation="vertical"
-              tools:context="com.adafruit.bluefruit.le.connect.app.PadActivity">
-
-    <View
-        android:id="@+id/topSpacerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#000000"/>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_background"
+    android:weightSum="1"
+    android:id="@+id/Main_Layout"
+    app:layout_collapseParallaxMultiplier="1.0"
+    tools:context="com.cesquerr.becky.app.PadActivity">
 
     <LinearLayout
-        android:id="@+id/mainLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:baselineAligned="false"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_width="387dp"
+        android:layout_height="99dp"
+        android:id="@+id/Speed_Layout"
+        android:weightSum="1">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1.2"
             android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:layout_width="120dp"
+            android:layout_height="match_parent">
 
-            <LinearLayout
+            <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-
-                <ImageButton
-                    android:id="@+id/upArrowImageButton"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="2dp"
-                    android:layout_weight="0.8"
-                    android:background="@drawable/roundedbutton"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/pad_arrow_button_up"
-                    android:tag="5"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.1"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/leftArrowImageButton"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="2dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/roundedbutton"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/pad_arrow_button_left"
-                    android:tag="7"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-
-                <ImageButton
-                    android:id="@+id/rightArrowImageButton"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="2dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/roundedbutton"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/pad_arrow_button_right"
-                    android:tag="8"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-
-                <ImageButton
-                    android:id="@+id/bottomArrowImageButton"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="2dp"
-                    android:layout_weight=".8"
-                    android:background="@drawable/roundedbutton"
-
-                    android:scaleType="centerInside"
-                    android:src="@drawable/pad_arrow_button_down"
-                    android:tag="6"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:background="@drawable/default_background"
+                app:srcCompat="@drawable/pad_button_plus"
+                android:id="@+id/plusImageButton"
+                android:tag="P" />
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="#929292"
-            android:onClick="onClickExit"
-            android:padding="10dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/pad_button_exit"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="120dp"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="120dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="50dp"
-            android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:layout_width="120dp"
+            android:layout_height="match_parent">
 
-
-            <LinearLayout
+            <ImageButton
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/pad_button_minus"
+                android:background="@drawable/default_background"
+                android:id="@+id/minusImageButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:tag="M" />
+        </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/button1ImageButton"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/roundedbutton"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/pad_button_numbers_1"
-                    android:tag="1"/>
+    </LinearLayout>
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="329dp"
+        android:id="@+id/Control_Layout"
+        android:weightSum="1">
 
-                <ImageButton
-                    android:id="@+id/button2ImageButton"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/roundedbutton"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/pad_button_numbers_2"
-                    android:tag="2"/>
-
-            </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_weight="0.00"
+            android:layout_width="120dp">
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_height="116dp" />
 
-            <LinearLayout
+            <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_arrow_button_left"
+                android:background="@drawable/default_background"
+                android:id="@+id/leftImageButton"
+                android:tag="L" />
 
-                <ImageButton
-                    android:id="@+id/button3ImageButton"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/roundedbutton"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/pad_button_numbers_3"
-                    android:tag="3"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+        </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/button4ImageButton"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/roundedbutton"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/pad_button_numbers_4"
-                    android:tag="4"/>
-            </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_width="120dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_arrow_button_up"
+                android:background="@drawable/default_background"
+                android:id="@+id/upImageButton"
+                android:tag="F" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_stop_button"
+                android:background="@drawable/default_background"
+                android:id="@+id/stopImageButton"
+                android:onClick="onClickExit" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_arrow_button_down"
+                android:background="@drawable/default_background"
+                android:id="@+id/downImageButton"
+                android:tag="B" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_width="120dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="116dp" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_arrow_button_right"
+                android:background="@drawable/default_background"
+                android:tag="R"
+                android:id="@+id/rightImageButton" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
         </LinearLayout>
     </LinearLayout>
 
-    <View
-        android:id="@+id/bottomSpacerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/Mode_Layout">
 
-        android:background="#000000"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="120dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_autonomous_button"
+                android:background="@drawable/default_background"
+                android:id="@+id/autonomousImageButton"
+                android:tag="A" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="120dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="120dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_remote_button"
+                android:background="@drawable/default_background"
+                android:id="@+id/remoteImageButton"
+                android:tag="C" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

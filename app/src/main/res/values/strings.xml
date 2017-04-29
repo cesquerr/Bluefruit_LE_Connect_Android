@@ -2,8 +2,8 @@
 <resources>
 
     <!-- General -->
-    <string name="app_name">Becky Lovely Car</string>
-    <string name="app_full_name">Becky Lovely Car</string>
+    <string name="app_name">Becky</string>
+    <string name="app_full_name">Becky</string>
     <string name="action_info">Info</string>
     <string name="action_mqttsettings">MQTT</string>
     <string name="action_settings">Settings</string>
@@ -122,6 +122,7 @@
 
     <!-- Pad Activity -->
     <string name="title_activity_pad">Control Pad</string>
+    <string name="title_activity_pad_predefined_values">Control Pad Predefined Values</string>
 
     <!-- Connected Settings -->
     <string name="title_activity_connected_settings">Firmware Updates</string>
