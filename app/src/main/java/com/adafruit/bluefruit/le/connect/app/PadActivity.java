@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.adafruit.bluefruit.le.connect.R;
@@ -16,10 +15,7 @@ import java.nio.ByteBuffer;
 
 public class PadActivity extends UartInterfaceActivity {
     // Log
-    private final static String TAG = PadActivity.class.getSimpleName();
-
-    // Constants
-    private final static float kMinAspectRatio = 1.5f;
+    private final static String TAG = PadActivityPredefinedValues.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,67 +25,47 @@ public class PadActivity extends UartInterfaceActivity {
         mBleManager = BleManager.getInstance(this);
 
         // UI
-        ImageButton upArrowImageButton = (ImageButton) findViewById(R.id.upArrowImageButton);
+        ImageButton upArrowImageButton = (ImageButton) findViewById(R.id.upImageButton);
         upArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton leftArrowImageButton = (ImageButton) findViewById(R.id.leftArrowImageButton);
+        ImageButton leftArrowImageButton = (ImageButton) findViewById(R.id.leftImageButton);
         leftArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton rightArrowImageButton = (ImageButton) findViewById(R.id.rightArrowImageButton);
+        ImageButton rightArrowImageButton = (ImageButton) findViewById(R.id.rightImageButton);
         rightArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton bottomArrowImageButton = (ImageButton) findViewById(R.id.bottomArrowImageButton);
-        bottomArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
+        ImageButton downArrowImageButton = (ImageButton) findViewById(R.id.downImageButton);
+        downArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
 
-        ImageButton button1ImageButton = (ImageButton) findViewById(R.id.button1ImageButton);
-        button1ImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton button2ImageButton = (ImageButton) findViewById(R.id.button2ImageButton);
-        button2ImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton button3ImageButton = (ImageButton) findViewById(R.id.button3ImageButton);
-        button3ImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton button4ImageButton = (ImageButton) findViewById(R.id.button4ImageButton);
-        button4ImageButton.setOnTouchListener(mPadButtonTouchListener);
+        ImageButton plusImageButton = (ImageButton) findViewById(R.id.plusImageButton);
+        plusImageButton.setOnTouchListener(mPadButtonTouchListener);
+        ImageButton minusImageButton = (ImageButton) findViewById(R.id.minusImageButton);
+        minusImageButton.setOnTouchListener(mPadButtonTouchListener);
+        ImageButton autonomousButton = (ImageButton) findViewById(R.id.autonomousImageButton);
+        autonomousButton.setOnTouchListener(mPadButtonTouchListener);
+        ImageButton remoteButton = (ImageButton) findViewById(R.id.remoteImageButton);
+        remoteButton.setOnTouchListener(mPadButtonTouchListener);
 
         // Start services
         onServicesDiscovered();
     }
 
-    private void adjustAspectRatio() {
-        ViewGroup rootLayout = (ViewGroup) findViewById(R.id.rootLayout);
-        int mainWidth = rootLayout.getWidth();
-
-        if (mainWidth > 0) {
-            View topSpacerView = findViewById(R.id.topSpacerView);
-            View bottomSpacerView = findViewById(R.id.bottomSpacerView);
-            int mainHeight = rootLayout.getHeight() - topSpacerView.getLayoutParams().height - bottomSpacerView.getLayoutParams().height;
-            if (mainHeight > 0) {
-                // Add black bars if aspect ratio is below min
-                float aspectRatio = mainWidth / (float) mainHeight;
-                if (aspectRatio < kMinAspectRatio) {
-                    final int spacerHeight = Math.round(mainHeight * (kMinAspectRatio - aspectRatio));
-                    topSpacerView.getLayoutParams().height = spacerHeight / 2;
-                    bottomSpacerView.getLayoutParams().height = spacerHeight / 2;
-                }
-            }
-        }
-    }
-
     View.OnTouchListener mPadButtonTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent event) {
-            final int tag = Integer.valueOf((String) view.getTag());
+            final String command = (String) view.getTag();
             if (event.getAction() == MotionEvent.ACTION_DOWN) {
                 view.setPressed(true);
-                sendTouchEvent(tag, true);
+                sendTouchEvent(command, true);
                 return true;
             } else if (event.getAction() == MotionEvent.ACTION_UP) {
                 view.setPressed(false);
-                sendTouchEvent(tag, false);
+                sendTouchEvent(command, false);
                 return true;
             }
             return false;
         }
     };
 
-    private void sendTouchEvent(int tag, boolean pressed) {
-        String data = "!B" + tag + (pressed ? "1" : "0");
+    private void sendTouchEvent(String command, boolean pressed) {
+        String data = "!C" + command + (pressed ? "1" : "0");
         ByteBuffer buffer = ByteBuffer.allocate(data.length()).order(java.nio.ByteOrder.LITTLE_ENDIAN);
         buffer.put(data.getBytes());
         sendDataWithCRC(buffer.array());
@@ -140,7 +116,6 @@ public class PadActivity extends UartInterfaceActivity {
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-            adjustAspectRatio();
         }
 
     }
@@ -149,17 +124,6 @@ public class PadActivity extends UartInterfaceActivity {
         finish();
     }
 
-    /*
-    @Override
-    public void onConnected() {
-
-    }
-
-    @Override
-    public void onConnecting() {
-
-    }
-*/
     @Override
     public void onDisconnected() {
         super.onDisconnected();
@@ -167,25 +131,4 @@ public class PadActivity extends UartInterfaceActivity {
         setResult(-1);      // Unexpected Disconnect
         finish();
     }
-/*
-    @Override
-    public void onServicesDiscovered() {
-        mUartService = mBleManager.getGattService(UUID_SERVICE);
-    }
-
-    @Override
-    public void onDataAvailable(BluetoothGattCharacteristic characteristic) {
-
-    }
-
-    @Override
-    public void onDataAvailable(BluetoothGattDescriptor descriptor) {
-    }
-
-    @Override
-    public void onReadRemoteRssi(int rssi) {
-
-    }
-
-    */
 }

@@ -27,7 +27,7 @@
                 android:background="@drawable/default_background"
                 app:srcCompat="@drawable/pad_button_plus"
                 android:id="@+id/plusImageButton"
-                android:tag="1" />
+                android:tag="P" />
         </LinearLayout>
 
         <LinearLayout
@@ -51,7 +51,7 @@
                 android:background="@drawable/default_background"
                 android:id="@+id/minusImageButton"
                 android:layout_width="match_parent"
-                android:tag="2" />
+                android:tag="M" />
         </LinearLayout>
 
     </LinearLayout>
@@ -69,9 +69,13 @@
             android:layout_weight="0.00"
             android:layout_width="120dp">
 
-            <View
+            <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="116dp" />
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_arrow_up_left"
+                android:background="@drawable/default_background"
+                android:id="@+id/upLeftImageButton"
+                android:tag="L+45" />
 
             <ImageButton
                 android:layout_width="match_parent"
@@ -79,11 +83,15 @@
                 app:srcCompat="@drawable/pad_arrow_button_left"
                 android:background="@drawable/default_background"
                 android:id="@+id/leftImageButton"
-                android:tag="7" />
+                android:tag="L+90" />
 
-            <View
+            <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_arrow_down_left"
+                android:background="@drawable/default_background"
+                android:id="@+id/downLeftImageButton"
+                android:tag="L+135" />
 
         </LinearLayout>
 
@@ -95,29 +103,27 @@
 
             <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="116dp"
                 app:srcCompat="@drawable/pad_arrow_button_up"
                 android:background="@drawable/default_background"
                 android:id="@+id/upImageButton"
-                android:layout_weight="0.34"
-                android:tag="5" />
+                android:tag="F+10" />
 
             <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="116dp"
                 app:srcCompat="@drawable/pad_stop_button"
                 android:background="@drawable/default_background"
                 android:id="@+id/stopImageButton"
-                android:onClick="onClickExit"
-                android:layout_weight="0.50" />
+                android:tag="S" />
 
             <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="116dp"
                 app:srcCompat="@drawable/pad_arrow_button_down"
                 android:background="@drawable/default_background"
-                android:id="@+id/bottomImageButton"
-                android:tag="6" />
+                android:id="@+id/downImageButton"
+                android:tag="B+10" />
         </LinearLayout>
 
         <LinearLayout
@@ -125,21 +131,29 @@
             android:layout_height="match_parent"
             android:layout_width="120dp">
 
-            <View
+            <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="116dp" />
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_arrow_up_right"
+                android:background="@drawable/default_background"
+                android:id="@+id/upRightImageButton"
+                android:tag="R+45"/>
 
             <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="113dp"
+                android:layout_height="116dp"
                 app:srcCompat="@drawable/pad_arrow_button_right"
                 android:background="@drawable/default_background"
-                android:tag="8"
-                android:id="@+id/rightImageButton" />
+                android:id="@+id/rightImageButton"
+                android:tag="R+90" />
 
-            <View
+            <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="116dp"
+                app:srcCompat="@drawable/pad_arrow_down_right"
+                android:background="@drawable/default_background"
+                android:id="@+id/downRightImageButton"
+                android:tag="R+135"/>
 
         </LinearLayout>
     </LinearLayout>
@@ -162,7 +176,7 @@
                 app:srcCompat="@drawable/pad_autonomous_button"
                 android:background="@drawable/default_background"
                 android:id="@+id/autonomousImageButton"
-                android:tag="4" />
+                android:tag="A" />
         </LinearLayout>
 
         <LinearLayout
@@ -186,7 +200,7 @@
                 app:srcCompat="@drawable/pad_remote_button"
                 android:background="@drawable/default_background"
                 android:id="@+id/remoteImageButton"
-                android:tag="3" />
+                android:tag="C" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
