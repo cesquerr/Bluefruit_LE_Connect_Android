@@ -107,7 +107,7 @@
                 app:srcCompat="@drawable/pad_arrow_button_up"
                 android:background="@drawable/default_background"
                 android:id="@+id/upImageButton"
-                android:tag="F+10" />
+                android:tag="F+5" />
 
             <ImageButton
                 android:layout_width="match_parent"
@@ -123,7 +123,7 @@
                 app:srcCompat="@drawable/pad_arrow_button_down"
                 android:background="@drawable/default_background"
                 android:id="@+id/downImageButton"
-                android:tag="B+10" />
+                android:tag="B+5" />
         </LinearLayout>
 
         <LinearLayout
